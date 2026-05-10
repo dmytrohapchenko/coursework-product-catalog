@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Loader from '../components/Loader.jsx'
 import ProductCard from '../components/ProductCard.jsx'
+import { getCategoryLabel } from '../data/categoryLabels.js'
 import { products } from '../data/products.js'
 
 function ProductListPage() {
@@ -35,37 +36,42 @@ function ProductListPage() {
   return (
     <main className="page">
       <header className="page-header">
-        <h1>Product Catalog</h1>
-        <p>Browse products, search by name, and filter by category.</p>
+        <h1>Каталог PeriTech</h1>
+        <p>
+          Переглядайте комп'ютерну периферію, шукайте товари за назвою та
+          фільтруйте їх за категорією.
+        </p>
       </header>
 
       <section className="filters">
         <label>
-          Search product
+          Пошук пристрою
           <input
             type="text"
-            placeholder="Type a product name..."
+            placeholder="Введіть назву пристрою..."
             value={searchText}
             onChange={(event) => setSearchText(event.target.value)}
           />
         </label>
 
         <label>
-          Category
+          Категорія
           <select
             value={selectedCategory}
             onChange={(event) => setSelectedCategory(event.target.value)}
           >
             {categories.map((category) => (
               <option key={category} value={category}>
-                {category}
+                {getCategoryLabel(category)}
               </option>
             ))}
           </select>
         </label>
       </section>
 
-      <p className="result-count">Showing {filteredProducts.length} products</p>
+      <p className="result-count">
+        Показано товарів PeriTech: {filteredProducts.length}
+      </p>
 
       <section className="product-grid">
         {filteredProducts.map((product) => (
@@ -74,7 +80,9 @@ function ProductListPage() {
       </section>
 
       {filteredProducts.length === 0 && (
-        <p className="empty-message">No products match your search.</p>
+        <p className="empty-message">
+          За вашим запитом периферійних пристроїв не знайдено.
+        </p>
       )}
     </main>
   )

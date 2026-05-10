@@ -9,9 +9,9 @@ function App() {
       <div className="app-layout">
         <header className="site-header">
           <div>
-            <h1>Product Catalog Coursework</h1>
+            <h1>PeriTech</h1>
             <p>
-              A React application with product filtering and product details.
+              Інтернет-магазин периферійних комп’ютерних пристроїв
             </p>
           </div>
         </header>
@@ -22,7 +22,7 @@ function App() {
         </Routes>
 
         <footer className="site-footer">
-          <p>Created by Dmytro Hapchenko</p>
+          <p>PeriTech coursework project by Dmytro Hapchenko</p>
         </footer>
       </div>
     </BrowserRouter>

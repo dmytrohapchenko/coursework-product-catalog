@@ -1,6 +1,6 @@
-# Product Catalog Coursework
+# PeriTech
 
-This is a simple university coursework project built with React. The application shows a product catalog where users can browse products, search by product name, filter by category, and open a product details page.
+PeriTech is a simple university coursework project: an online store/catalog of computer peripheral devices. The application lets users browse peripherals, search by product name, filter by category, and open a product details page.
 
 ## Technologies
 
@@ -12,10 +12,12 @@ This is a simple university coursework project built with React. The application
 
 ## Features
 
-- Product list
-- Product details page
+- PeriTech catalog page
+- Product details page for each peripheral
 - Search by product name
 - Category filter
+- Product count text
+- Real product photos on cards and details pages
 - Mock product data
 - Loading state with artificial delay
 - Product not found page for invalid product IDs
@@ -65,6 +67,14 @@ Create a production build:
 ```bash
 npm run build
 ```
+
+## Джерело даних
+
+Каталог PeriTech використовує локальні mock-дані з файлу `src/data/products.js`. Детальніше описано у файлі [docs/data-sources.md](docs/data-sources.md).
+
+## Coursework Note
+
+The catalog uses mock data based on open product information for coursework purposes. Product names, categories, descriptions, prices, ratings, and images are included only to demonstrate the React catalog functionality.
 
 ## Author
 

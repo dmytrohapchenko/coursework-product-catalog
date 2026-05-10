@@ -2,7 +2,7 @@ function Loader() {
   return (
     <div className="loader">
       <div className="spinner"></div>
-      <p>Loading products...</p>
+      <p>Завантаження товарів PeriTech...</p>
     </div>
   )
 }
