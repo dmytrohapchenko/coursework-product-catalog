@@ -1,12 +1,12 @@
-# Джерело даних
+# Data Source
 
-У проєкті PeriTech каталог товарів використовує локальні тестові дані. Вони зберігаються у файлі `src/data/products.js`.
+The PeriTech project uses local mock data for the product catalog. The data is stored in `src/data/products.js`.
 
-Дані були підготовлені вручну на основі відкритої інформації про периферійні комп'ютерні пристрої з онлайн-магазинів та сайтів виробників. Це зроблено для навчальної демонстрації роботи каталогу.
+The dataset was manually prepared based on open information about computer peripheral products from online stores and manufacturer websites. It is used for an educational demonstration of how a product catalog works.
 
-Зображення товарів використовують публічні URL-адреси або відкриті зображення з вебу. Вони потрібні лише для освітньої демонстрації зовнішнього вигляду карток товарів і сторінки деталей.
+Product images use public image URLs and open web images. They are included only to demonstrate the visual appearance of product cards and the product details page in a coursework project.
 
-Кожен товар у наборі даних містить такі поля:
+Each product in the dataset contains the following fields:
 
 - `id`
 - `name`
@@ -16,4 +16,4 @@
 - `image`
 - `rating`
 
-Такий підхід імітує реальний каталог товарів без використання бекенду або зовнішнього API. Це дозволяє зосередитися на базовій логіці React: відображенні списку, пошуку, фільтрації та переході на сторінку деталей товару.
+This approach simulates a real product catalog without a backend or external API. It makes it possible to focus on core React logic: displaying a list of products, searching, filtering, and navigating to a product details page.

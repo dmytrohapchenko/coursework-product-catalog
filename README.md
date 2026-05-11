@@ -1,6 +1,8 @@
 # PeriTech
 
-PeriTech is a simple university coursework project: an online store/catalog of computer peripheral devices. The application lets users browse peripherals, search by product name, filter by category, and open a product details page.
+## Description
+
+PeriTech is a university coursework project: an online store/catalog of computer peripheral devices. The application lets users browse peripherals, search by product name, filter products by category, and open a separate product details page.
 
 ## Technologies
 
@@ -12,15 +14,33 @@ PeriTech is a simple university coursework project: an online store/catalog of c
 
 ## Features
 
-- PeriTech catalog page
-- Product details page for each peripheral
+- PeriTech product catalog page
+- Product details page for each peripheral device
 - Search by product name
-- Category filter
-- Product count text
-- Real product photos on cards and details pages
-- Mock product data
-- Loading state with artificial delay
+- Category filtering
+- Product count display
+- Product photos on catalog cards and details pages
+- Local mock product data
+- Loading state with an artificial delay
 - Product not found page for invalid product IDs
+
+## Data Source
+
+The PeriTech catalog uses local mock data from `src/data/products.js`.
+
+The dataset was manually prepared based on open information about computer peripheral products from online stores and manufacturer websites. Public image URLs and open web images are used for educational demonstration purposes.
+
+Each product in the dataset includes:
+
+- `id`
+- `name`
+- `category`
+- `price`
+- `description`
+- `image`
+- `rating`
+
+This approach simulates a real product catalog without a backend or external API. More details are available in [docs/data-sources.md](docs/data-sources.md).
 
 ## Project Structure
 
@@ -40,6 +60,8 @@ coursework-product-catalog/
 │   ├── App.jsx
 │   ├── index.css
 │   └── main.jsx
+├── docs/
+│   └── data-sources.md
 ├── index.html
 ├── package.json
 ├── vite.config.js
@@ -67,14 +89,6 @@ Create a production build:
 ```bash
 npm run build
 ```
-
-## Джерело даних
-
-Каталог PeriTech використовує локальні mock-дані з файлу `src/data/products.js`. Детальніше описано у файлі [docs/data-sources.md](docs/data-sources.md).
-
-## Coursework Note
-
-The catalog uses mock data based on open product information for coursework purposes. Product names, categories, descriptions, prices, ratings, and images are included only to demonstrate the React catalog functionality.
 
 ## Author
 
