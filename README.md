@@ -20,6 +20,10 @@ PeriTech is a university coursework project: an online store/catalog of computer
 - Category filtering
 - Product count display
 - Product photos on catalog cards and details pages
+- Global shopping cart state with React Context
+- Add to cart buttons on catalog cards and product details pages
+- Cart page with selected products, quantities, subtotals, total items, and total price
+- Quantity increase/decrease, remove item, and clear cart actions
 - Local mock product data
 - Loading state with an artificial delay
 - Product not found page for invalid product IDs
@@ -49,11 +53,16 @@ coursework-product-catalog/
 ├── public/
 ├── src/
 │   ├── components/
+│   │   ├── CartIcon.jsx
 │   │   ├── Loader.jsx
 │   │   └── ProductCard.jsx
+│   ├── context/
+│   │   ├── CartProvider.jsx
+│   │   └── useCart.js
 │   ├── data/
 │   │   └── products.js
 │   ├── pages/
+│   │   ├── CartPage.jsx
 │   │   ├── ProductDetailsPage.jsx
 │   │   └── ProductListPage.jsx
 │   ├── App.css

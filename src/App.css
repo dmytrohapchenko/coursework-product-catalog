@@ -10,13 +10,17 @@
   border-bottom: 4px solid #38bdf8;
 }
 
-.site-header div,
+.site-header-inner,
 .site-footer p {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
 }
 
-.site-header div {
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
   padding: 26px 0;
 }
 
@@ -29,6 +33,31 @@
 .site-header p {
   margin: 0;
   color: #dbeafe;
+}
+
+.cart-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  border: 1px solid #7dd3fc;
+  border-radius: 6px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.cart-link:hover {
+  background: #0f2a44;
+}
+
+.cart-count {
+  min-width: 26px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  color: #0f172a;
+  background: #7dd3fc;
+  text-align: center;
 }
 
 .page {
@@ -151,6 +180,7 @@
 
 .details-link,
 .add-to-cart-button,
+.details-cart-button,
 .back-link {
   display: inline-block;
   color: #ffffff;
@@ -166,12 +196,15 @@
 
 .details-link:hover,
 .add-to-cart-button:hover,
+.details-cart-button:hover,
 .back-link:hover {
   background: #0369a1;
 }
 
-.add-to-cart-button {
-  margin-left: 10px;
+.product-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .back-link {
@@ -209,6 +242,10 @@
 
 .details-info p {
   margin: 8px 0;
+}
+
+.details-cart-button {
+  margin-top: 18px;
 }
 
 .details-note {
@@ -278,6 +315,164 @@
   color: #4b5563;
 }
 
+.cart-page-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.cart-page-header .back-link {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  align-items: start;
+}
+
+.cart-items {
+  display: grid;
+  gap: 16px;
+}
+
+.cart-item,
+.cart-summary,
+.empty-cart {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 120px 1fr auto auto auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+}
+
+.cart-item img {
+  width: 120px;
+  height: 90px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #f8fafc;
+}
+
+.cart-item-info h2 {
+  margin: 8px 0 6px;
+  color: #111827;
+  font-size: 20px;
+}
+
+.cart-item-info p {
+  margin: 0;
+  color: #4b5563;
+}
+
+.quantity-controls {
+  display: inline-grid;
+  grid-template-columns: 34px 38px 34px;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.quantity-controls button {
+  height: 34px;
+  border: 0;
+  color: #075985;
+  background: #e0f2fe;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.quantity-controls button:hover {
+  background: #bae6fd;
+}
+
+.quantity-controls span {
+  color: #111827;
+  text-align: center;
+  font-weight: 700;
+}
+
+.cart-subtotal {
+  color: #111827;
+  font-size: 18px;
+}
+
+.remove-button,
+.clear-cart-button {
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: #b91c1c;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.remove-button {
+  padding: 9px 12px;
+}
+
+.clear-cart-button {
+  width: 100%;
+  padding: 11px 14px;
+}
+
+.remove-button:hover,
+.clear-cart-button:hover {
+  background: #991b1b;
+}
+
+.cart-summary {
+  padding: 18px;
+}
+
+.cart-summary h2,
+.empty-cart h1 {
+  margin: 0 0 14px;
+  color: #111827;
+}
+
+.cart-summary p {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 12px 0;
+  color: #4b5563;
+}
+
+.cart-summary strong {
+  color: #111827;
+}
+
+.cart-summary .clear-cart-button {
+  margin-top: 14px;
+}
+
+.empty-cart {
+  max-width: 620px;
+  margin: 36px auto;
+  padding: 28px;
+  text-align: center;
+}
+
+.empty-cart p {
+  margin: 0 0 20px;
+  color: #4b5563;
+}
+
 .site-footer {
   padding: 18px 0;
   color: #d1d5db;
@@ -297,8 +492,16 @@
 
 @media (max-width: 700px) {
   .filters,
-  .details-layout {
+  .details-layout,
+  .cart-layout,
+  .cart-item {
     grid-template-columns: 1fr;
+  }
+
+  .site-header-inner,
+  .cart-page-header {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .page-header h1,
@@ -312,5 +515,10 @@
 
   .details-image {
     min-height: 260px;
+  }
+
+  .cart-item img {
+    width: 100%;
+    height: 180px;
   }
 }

@@ -18,16 +18,18 @@ function ProductCard({ product }) {
           <strong>${product.price.toFixed(2)}</strong>
           <span>Рейтинг: {product.rating} / 5</span>
         </div>
-        <Link className="details-link" to={`/products/${product.id}`}>
-          Детальніше
-        </Link>
-        <button
-          className="add-to-cart-button"
-          type="button"
-          onClick={() => addToCart(product)}
-        >
-          Add to cart
-        </button>
+        <div className="product-card-actions">
+          <Link className="details-link" to={`/products/${product.id}`}>
+            Детальніше
+          </Link>
+          <button
+            className="add-to-cart-button"
+            type="button"
+            onClick={() => addToCart(product)}
+          >
+            Add to cart
+          </button>
+        </div>
       </div>
     </article>
   )

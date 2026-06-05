@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Loader from '../components/Loader.jsx'
+import { useCart } from '../context/useCart.js'
 import { getCategoryLabel } from '../data/categoryLabels.js'
 import { products } from '../data/products.js'
 
 function ProductDetailsPage() {
   const [isLoading, setIsLoading] = useState(true)
+  const { addToCart } = useCart()
   const { id } = useParams()
 
   useEffect(() => {
@@ -69,6 +71,14 @@ function ProductDetailsPage() {
               <strong>ID товару:</strong> PT-{product.id}
             </p>
           </div>
+
+          <button
+            className="details-cart-button"
+            type="button"
+            onClick={() => addToCart(product)}
+          >
+            Add to cart
+          </button>
 
           <div className="details-note">
             <h2>Про товар</h2>
