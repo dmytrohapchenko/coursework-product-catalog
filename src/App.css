@@ -150,19 +150,28 @@
 }
 
 .details-link,
+.add-to-cart-button,
 .back-link {
   display: inline-block;
   color: #ffffff;
   background: #0284c7;
+  border: 0;
   border-radius: 6px;
   padding: 10px 14px;
   text-decoration: none;
+  font: inherit;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .details-link:hover,
+.add-to-cart-button:hover,
 .back-link:hover {
   background: #0369a1;
+}
+
+.add-to-cart-button {
+  margin-left: 10px;
 }
 
 .back-link {

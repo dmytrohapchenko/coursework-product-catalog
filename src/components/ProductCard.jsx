@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
+import { useCart } from '../context/useCart.js'
 import { getCategoryLabel } from '../data/categoryLabels.js'
 
 function ProductCard({ product }) {
+  const { addToCart } = useCart()
+
   return (
     <article className="product-card">
       <img src={product.image} alt={product.name} />
@@ -18,6 +21,13 @@ function ProductCard({ product }) {
         <Link className="details-link" to={`/products/${product.id}`}>
           Детальніше
         </Link>
+        <button
+          className="add-to-cart-button"
+          type="button"
+          onClick={() => addToCart(product)}
+        >
+          Add to cart
+        </button>
       </div>
     </article>
   )
